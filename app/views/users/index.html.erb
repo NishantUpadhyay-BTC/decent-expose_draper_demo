@@ -1,0 +1,4 @@
+User Data:
+<% users.each do |user| %>
+Name : <%= user.username %> created_at : <%= UserDecorator.new(user).created_at   %> <br>
+<% end %>
