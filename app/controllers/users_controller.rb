@@ -1,3 +1,6 @@
+# http://blog.remarkablelabs.com/2013/01/how-to-decrease-coupling-in-your-controllers-views-with-decent_exposure-for-better-maintainability
+# http://railscasts.com/episodes/259-decent-exposure
+
 class UsersController < ApplicationController
 	
 	# Typical old style controller methods
@@ -37,10 +40,6 @@ class UsersController < ApplicationController
 	#
 	
 	expose(:users)
-	
-	expose(:user_decorator) do
-    UserDecorator.new(user)
-  end
 
 	expose(:user, attributes: :user_params)
 	# This simple declaration makes a few assumptions about your environment:
@@ -69,3 +68,4 @@ class UsersController < ApplicationController
 		params.require(:user).permit!
 	end
 end
+
